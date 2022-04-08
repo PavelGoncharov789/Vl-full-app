@@ -4,9 +4,8 @@ import "materialize-css";
 import {useRoutes} from "./routes"
 
 function App() {
-  const routes = useRoutes(true);
+  const routes = useRoutes(false);
 
-  console.log(routes,"routes");
   return routes;
 }
 
