@@ -7,7 +7,6 @@ import { AuthPage } from "./pages/AuthPage";
 import { Routes, Route, Link, Navigate, Router } from "react-router-dom";
 
 export const useRoutes = (isAuthenticated) => {
-  console.log(isAuthenticated, "isAuthenticated");
   if (isAuthenticated) {
     return (
       <Routes>

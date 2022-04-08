@@ -35,12 +35,11 @@ router.post(
 
       const hashedPassword = await bcrypt.hash(password, 12);
       const user = new User({ email, password: hashedPassword });
-
       await user.save();
 
-      res.statys(201).json({ message: "Пользователь создан!" });
+      res.status(201).json({ message: "Пользователь создан!" });
     } catch (e) {
-      res.status(500).json({ message: "Error !!!!" });
+      res.status(500).json({ message: "Ошибка:статус 500" });
     }
   }
 );
