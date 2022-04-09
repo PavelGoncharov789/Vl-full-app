@@ -1,4 +1,4 @@
 {
     "port": 5000,
-    "jwtSecret": "Very very secret Key"
+    "jwtSecret": "Very"
 }
