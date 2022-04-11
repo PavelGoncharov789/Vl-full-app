@@ -17,7 +17,6 @@ export const useHttp = () => {
           body,
           headers,
         });
-        console.log(response,"response")
         const data = await response.json();
 
         if (!response.ok) {

@@ -51,6 +51,7 @@ export const AuthPage = () => {
                   id="email"
                   type="text"
                   name="email"
+                  value={form.email}
                   onChange={changeHAndler}
                   className="yellow-input"
                 />
@@ -64,6 +65,7 @@ export const AuthPage = () => {
                   type="password"
                   name="password"
                   onChange={changeHAndler}
+                  value={form.password}
                   className="yellow-input"
                   disabled={loading}
                 />
