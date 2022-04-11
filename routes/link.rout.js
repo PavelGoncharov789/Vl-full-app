@@ -4,6 +4,8 @@ const config = require("config");
 const shortId = require("shortid");
 const auth = require("../middleware/auth.middleware");
 const router = Router();
+
+
 const Link = require("../models/Link");
 
 router.post("/generate", auth, async (req, res) => {
@@ -11,6 +13,7 @@ router.post("/generate", auth, async (req, res) => {
     const baseUrl = config.get("baseUrl");
     const { from } = req.body;
     const code = shortId.generate();
+
 
     const existing = await Link.findOne({ from });
     if (existing) {
