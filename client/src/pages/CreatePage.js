@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useHttp } from "../hooks/http.hook";
 import { AuthContext } from "../context/AuthContext";
-import { createBrowserHistory } from "history";
+import { useNavigate } from "react-router-dom";
 
 export const CreatePage = () => {
-  const history = createBrowserHistory();
+  let navigate = useNavigate()
   const auth = useContext(AuthContext);
   const { request } = useHttp();
   const [link, setLink] = useState("");
@@ -24,8 +24,8 @@ export const CreatePage = () => {
             Authorization: `Bearer ${auth.token}`,
           }
         );
-        console.log(data);
-        history.push(`/detail/${data.link._id}`);
+        navigate(`/detail/${data.link._id}`, { replace: true });
+
       } catch (e) {
         console.log(e.message, "ошибка у");
       }
