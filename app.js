@@ -6,8 +6,9 @@ const app = express();
 
 app.use(express.json({ extended: true}))
 
-app.use('/api/auth', require('./routes/auth.rout'));
+app.use('/api/auth', require('./routes/auth.rout'))
 app.use('/api/link', require('./routes/link.rout'))
+app.use('/t', require('./routes/redirect.rout'))
 
 
 const PORT = config.get("port") || 5000;
